@@ -1,161 +1,419 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alexander Bernal | Marketing Internacional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alexander Bernal | Marketing, UX/UI & Joyería de Lujo</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Alexander Bernal: Marketing internacional, UX/UI y emprendimiento en joyería de lujo con esmeraldas, plata y oro. Inglés C1, francés B2, italiano B2. Proyectos, resultados y contacto.">
+  <meta name="keywords" content="Marketing, UX, UI, Joyería de lujo, Esmeraldas, Esmeralds, Diseño, Google Ads, Profesor de inglés, Portafolio">
+  <meta name="author" content="Alexander Bernal">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Alexander Bernal | Marketing, UX/UI & Joyería de Lujo">
+  <meta property="og:description" content="Estrategia, diseño y lujo. Portafolio, proyectos y contacto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexhardlion09.github.io/mi-portafolio/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Fuentes & Iconos -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8fafc;
-      color: #222;
-      line-height: 1.6;
+    :root{
+      --bg:#0d1117;
+      --surface:#0f172a;
+      --muted:#94a3b8;
+      --text:#e2e8f0;
+      --primary:#1d4ed8;
+      --primary-2:#0ea5e9;
+      --lux:#d4af37;        /* dorado lujo */
+      --accent:#10b981;     /* verde esmeralda */
+      --card:#0b1220;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius:16px;
     }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 600px at 80% -10%, #0b2b4e 0%, #091320 40%, #070b13 100%);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1100px, 92%); margin-inline:auto}
 
-    header {
-      background: linear-gradient(135deg, #2563eb, #16a34a);
-      color: white;
-      text-align: center;
-      padding: 6rem 2rem;
+    /* NAV */
+    nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(7,11,19,.55); border-bottom:1px solid rgba(255,255,255,.06);
     }
+    .nav-row{
+      display:flex; align-items:center; justify-content:space-between; padding:.8rem 0;
+    }
+    .brand{display:flex; gap:.6rem; align-items:center; font-weight:700; letter-spacing:.3px}
+    .brand i{color:var(--lux)}
+    .links{display:flex; gap:1rem; font-weight:600; font-size:.95rem}
+    .links a{opacity:.85}
+    .links a:hover{opacity:1}
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      animation: fadeInDown 1s ease;
+    /* HERO */
+    .hero{
+      padding: clamp(60px, 8vw, 120px) 0 60px;
+      background: linear-gradient(135deg, rgba(29,78,216,.2), rgba(16,185,129,.08));
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
+    .hero h1{font-size: clamp(32px, 5vw, 56px); margin:0 0 .6rem; line-height:1.05}
+    .hero p.lead{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted); margin:.2rem 0 1.4rem}
+    .badges{display:flex; flex-wrap:wrap; gap:.6rem; margin:1rem 0 2rem}
+    .badge{
+      border:1px solid rgba(255,255,255,.12); padding:.45rem .75rem; border-radius:999px;
+      font-size:.85rem; background:rgba(255,255,255,.02)
+    }
+    .cta{display:flex; gap:.8rem; flex-wrap:wrap}
+    .btn{
+      padding:.9rem 1.1rem; border-radius:10px; border:1px solid transparent; font-weight:700;
+      display:inline-flex; align-items:center; gap:.5rem; box-shadow:var(--shadow); transition:.2s ease;
+    }
+    .btn-primary{background: linear-gradient(135deg, var(--primary), var(--primary-2));}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{border-color:rgba(255,255,255,.18); background:rgba(255,255,255,.02)}
+    .btn-outline:hover{border-color:rgba(255,255,255,.35)}
 
-    header p {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-      animation: fadeInUp 1s ease;
+    /* SECCIONES */
+    section{padding:72px 0}
+    .section-title{
+      font-size:clamp(24px, 3.3vw, 34px); margin:0 0 1.2rem; letter-spacing:.2px
     }
+    .grid{display:grid; gap:1.2rem}
+    .grid-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+    @media (max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:1.1rem 1.2rem;
+      box-shadow:var(--shadow);
     }
+    .eyebrow{font-size:.8rem; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:.35rem}
 
-    h2 {
-      text-align: center;
-      color: #2563eb;
-      margin-bottom: 2rem;
-      font-size: 2rem;
+    /* BLOQUES ESPECIALES */
+    .lux{
+      border:1px solid rgba(212,175,55,.35);
+      background:linear-gradient(160deg, rgba(212,175,55,.12), rgba(16,185,129,.06));
     }
+    .lux h3 i{color:var(--lux)}
+    .kpi{font-size:clamp(28px, 4vw, 40px); font-weight:800}
+    .muted{color:var(--muted)}
+    .pill{display:inline-flex; align-items:center; gap:.45rem; font-weight:700; font-size:.9rem; padding:.5rem .75rem; border-radius:999px; border:1px solid rgba(255,255,255,.15)}
+    .pill i{opacity:.85}
 
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+    /* PORTAFOLIO */
+    .thumb{
+      aspect-ratio: 16/10; border-radius:12px; background:#0c1627;
+      border:1px solid rgba(255,255,255,.08); overflow:hidden; display:grid; place-items:center;
     }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.1)}
+    .card a.more{display:inline-flex; gap:.45rem; align-items:center; margin-top:.6rem; color:#93c5fd}
+    .tag{font-size:.75rem; padding:.2rem .55rem; border:1px solid rgba(255,255,255,.15); border-radius:999px; color:#cbd5e1}
 
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+    /* TESTIMONIOS */
+    blockquote{margin:0}
+    .quote{font-style:italic; color:#cbd5e1}
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
+    /* FOOTER */
+    footer{padding:28px 0; border-top:1px solid rgba(255,255,255,.08); color:#9fb0c9; text-align:center}
 
-    .card h3 {
-      margin-bottom: 1rem;
-      color: #16a34a;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    a.button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    a.button:hover {
-      background: #1743a2;
-    }
-
-    footer {
-      background: #111827;
-      color: #9ca3af;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    /* Animaciones */
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+    /* util */
+    .spaced{display:flex; gap:.6rem; flex-wrap:wrap}
+    .mt-2{margin-top:.5rem} .mt-3{margin-top:1rem} .mt-4{margin-top:1.6rem}
   </style>
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alexander Bernal",
+    "jobTitle": "Marketing Strategist & UX/UI",
+    "url": "https://alexhardlion09.github.io/mi-portafolio/",
+    "knowsLanguage": ["es-CO","en","fr","it"],
+    "alumniOf": "Programa de Marketing Digital (pregrado) | Técnico en Producción Musical",
+    "hasCredential": "TESOL",
+    "worksFor": {"@type":"Organization","name":"SMART (Academia de idiomas)"},
+    "brand": {"@type":"Brand","name":"Joyería de Lujo – Esmeraldas, Plata y Oro"}
+  }
+  </script>
 </head>
 <body>
 
-  <header>
-    <h1>Alexander Bernal</h1>
-    <p>Marketing Internacional · Estrategia Digital · Comunicación Multilingüe</p>
-  </header>
-
-  <section>
-    <h2>Sobre mí</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      Soy un estratega de <strong>marketing internacional</strong> con enfoque en 
-      <strong>posicionamiento digital</strong> y <strong>branding global</strong>.  
-      Hablo <strong>inglés C1, francés, italiano y español nativo</strong>, lo que me permite conectar 
-      marcas con audiencias en múltiples mercados y culturas. Mi visión es convertir ideas en 
-      <strong>resultados medibles</strong> y experiencias memorables.
-    </p>
-  </section>
-
-  <section>
-    <h2>Habilidades Clave</h2>
-    <div class="skills">
-      <div class="card">
-        <h3>📈 Marketing Estratégico</h3>
-        <p>Desarrollo campañas internacionales que elevan marcas y generan crecimiento sostenido.</p>
-      </div>
-      <div class="card">
-        <h3>🎨 UX & Branding</h3>
-        <p>Experiencias digitales que convierten usuarios en clientes leales.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Comunicación Multilingüe</h3>
-        <p>Adaptación cultural y lingüística para mensajes claros y efectivos en cualquier mercado.</p>
-      </div>
-      <div class="card">
-        <h3>🤝 Negociación Global</h3>
-        <p>Capacidad para cerrar acuerdos estratégicos en contextos multiculturales.</p>
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-row">
+      <a class="brand" href="#top"><i class="fa-solid fa-gem"></i> <span>Alexander Bernal</span></a>
+      <div class="links">
+        <a href="#joyeria">Joyería</a>
+        <a href="#ux">UX/UI</a>
+        <a href="#docencia">Docencia</a>
+        <a href="#bar">Marketing Bar</a>
+        <a href="#musica">Música</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <section>
-    <h2>Proyectos Destacados</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Campaña Global</h3>
-        <p>Lideré el lanzamiento digital de una marca emergente en tres continentes.</p>
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="pill"><i class="fa-regular fa-circle-check"></i> Disponible para trabajo remoto (UX/Marketing)</div>
+      <h1>Marketing Internacional · UX/UI · Joyería de Lujo</h1>
+      <p class="lead">Estrategia, diseño y negocios premium. Inglés C1 · Francés B2 · Italiano B2. Con base en Medellín y enfoque global.</p>
+
+      <div class="badges">
+        <span class="badge"><i class="fa-solid fa-graduation-cap"></i> Pregrado en Marketing Digital</span>
+        <span class="badge"><i class="fa-solid fa-language"></i> TESOL · Docencia</span>
+        <span class="badge"><i class="fa-solid fa-sack-dollar"></i> Meta: 30–50M COP/mes</span>
+        <span class="badge"><i class="fa-solid fa-bolt"></i> Google Ads · Branding</span>
       </div>
-      <d
+
+      <div class="cta">
+        <a class="btn btn-primary" href="#contacto"><i class="fa-solid fa-paper-plane"></i> Contáctame</a>
+        <a class="btn btn-outline" href="assets/CV_Alexander_Bernal.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Descargar CV (PDF)</a>
+        <a class="btn btn-outline" href="#portafolio"><i class="fa-solid fa-briefcase"></i> Ver Portafolio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SOBRE MI / KPIs -->
+    <section>
+      <div class="container grid grid-3">
+        <div class="card">
+          <div class="eyebrow">Quién soy</div>
+          <h3>Marca personal</h3>
+          <p class="muted">Estratega en <strong>marketing internacional</strong> y <strong>UX/UI</strong>. Emprendedor de <strong>joyería de lujo</strong> con esmeraldas, plata y oro. Experiencia en <strong>campañas de Google Ads</strong>, docencia y proyectos creativos.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Resultados & enfoque</div>
+          <div class="kpi">+ROI & Experiencias</div>
+          <p class="muted">Diseño soluciones con impacto de negocio: posicionamiento premium, funnel de ventas y productos de alto margen.</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Idiomas</div>
+          <h3><i class="fa-solid fa-earth-americas"></i> Multilingüe</h3>
+          <p class="muted">Español nativo · Inglés C1 · Francés B2 · Italiano B2.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOYERÍA -->
+    <section id="joyeria">
+      <div class="container grid grid-2">
+        <div class="card lux">
+          <div class="eyebrow">Joyería de lujo</div>
+          <h3><i class="fa-solid fa-gem"></i> Esmeraldas · Plata · Oro</h3>
+          <p>Proyecto de <strong>joyería personalizada</strong> en Medellín con acceso directo a proveedores. Enfoque en piezas a medida, branding aspiracional y márgenes altos. Objetivo: <strong>30–50M COP/mes</strong> en utilidades combinadas.</p>
+          <ul class="muted">
+            <li>Propuesta de valor: exclusividad, certificación de gemas y diseño a medida.</li>
+            <li>Modelo: por encargo + colecciones cápsula de alta rotación.</li>
+            <li>Estrategia: sesiones privadas, concierge, alianzas con fotógrafos y estilistas.</li>
+          </ul>
+          <div class="spaced mt-3">
+            <span class="tag">Branding premium</span>
+            <span class="tag">Ticket alto</span>
+            <span class="tag">Atención 1:1</span>
+          </div>
+          <a class="more" href="#contacto"><i class="fa-solid fa-arrow-right"></i> Solicitar catálogo privado</a>
+        </div>
+        <div class="card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1516634781451-2f3f935c7a52?q=80&w=1200&auto=format&fit=crop" alt="Joyería de lujo con esmeraldas">
+          </div>
+          <p class="muted mt-2">Moodboard de materiales, acabados y fotografía editorial. (Pronto: catálogo propio y casos de clientes.)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UX/UI -->
+    <section id="ux">
+      <div class="container">
+        <div class="eyebrow">Experiencia</div>
+        <h2 class="section-title">UX/UI & Marketing Digital</h2>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3><i class="fa-solid fa-flask"></i> Farmé Brown — UX Intern</h3>
+            <p class="muted">Práctica en diseño de experiencia: arquitectura de información, prototipado en Figma y pruebas con usuarios.</p>
+            <div class="spaced"><span class="tag">Figma</span><span class="tag">IA</span><span class="tag">Design Thinking</span></div>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-bullseye"></i> Google Ads — Licorera Ángel</h3>
+            <p class="muted">Campañas locales con keywords transaccionales, anuncios responsivos, extensiones y optimización por ROAS.</p>
+            <div class="spaced"><span class="tag">CPC controlado</span><span class="tag">Geo-targeting</span></div>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-gem"></i> E-commerce Joyería (Mock)</h3>
+            <p class="muted">Prototipo de tienda con PDP de lujo, checkout simplificado y fotografía premium. (Case study en preparación).</p>
+            <div class="spaced"><span class="tag">Branding</span><span class="tag">Checkout</span><span class="tag">A/B</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCENCIA -->
+    <section id="docencia">
+      <div class="container grid grid-2">
+        <div class="card">
+          <div class="eyebrow">Docencia</div>
+          <h3><i class="fa-solid fa-chalkboard-user"></i> Profesor de Inglés (TESOL)</h3>
+          <p class="muted">SMART · Planes de clase con producción final (contexto, rol y tarea). Desarrollo de materiales de speaking y gramática basados en Cambridge/Interchange/Oxford.</p>
+          <ul class="muted">
+            <li>Clases grupales y particulares (Nicolás, Julieta, Jorge, Nidia).</li>
+            <li>Enfoque comunicativo y comparativos en inglés (adjetivos, sustantivos, verbos, participios).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Docencia de inglés">
+          </div>
+          <p class="muted mt-2">Materiales propios y evaluación por desempeño. Disponible para mock class / entrevista.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAR & MARKETING -->
+    <section id="bar">
+      <div class="container grid grid-2">
+        <div class="card">
+          <div class="eyebrow">Hospitalidad</div>
+          <h3><i class="fa-solid fa-martini-glass-citrus"></i> Licorera Ángel — Marketing</h3>
+          <p class="muted">Gestión de pedidos, inventario y campañas. Ideas: sistema de fidelización, noches temáticas y UGC con embajadores locales.</p>
+          <div class="spaced mt-2">
+            <span class="tag">Google Ads</span><span class="tag">CRM simple</span><span class="tag">Promos</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow">KPIs sugeridos</div>
+          <ul class="muted">
+            <li>Ticket promedio ↑ 20% con bundles premium.</li>
+            <li>Recompra mensual > 35% con club VIP.</li>
+            <li>Inventario: rotación por categoría y alertas de quiebre.</li>
+          </ul>
+          <a class="more" href="#contacto"><i class="fa-solid fa-arrow-right"></i> Solicitar plan mensual</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÚSICA -->
+    <section id="musica">
+      <div class="container grid grid-2">
+        <div class="card">
+          <div class="eyebrow">Música</div>
+          <h3><i class="fa-solid fa-guitar"></i> Post-Rock · Mezcla & Producción</h3>
+          <p class="muted">Premezcla correctiva realizada. Próximos pasos artísticos con Valhalla, FabFilter, SoundToys y Waves: espacios etéreos, guitarras protagonistas y dinámica controlada.</p>
+          <div class="spaced"><span class="tag">Valhalla</span><span class="tag">FabFilter</span><span class="tag">SoundToys</span></div>
+        </div>
+        <div class="card">
+          <blockquote class="quote">“Busco atmósferas melódicas y oscuras al estilo DIO — Distraught Overlord y ‘Dogma’/‘Shizuru’ de The Gazette.”</blockquote>
+          <p class="muted mt-2">Interés en visual kei japonés. Evitando riffs poco armónicos (línea editorial clara).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO GENERAL -->
+    <section id="portafolio">
+      <div class="container">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1520975693416-35a3cb0b9d8b?q=80&w=1200&auto=format&fit=crop" alt="UX Dashboard">
+            </div>
+            <h3>Dashboard UX para Retail</h3>
+            <p class="muted">IA de compras, arquitectura de información y prototipos en Figma. (Caso simulado para reclutadores.)</p>
+            <a class="more" href="#" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> Ver prototipo</a>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop" alt="Campaña Ads">
+            </div>
+            <h3>Google Ads — Licorera Ángel</h3>
+            <p class="muted">Estructura SKAG, anuncios responsivos y extensiones. ROAS y aprendizaje aplicado.</p>
+            <a class="more" href="#" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> Resultados</a>
+          </article>
+          <article class="card">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1516637090014-cb1ab0d08fc7?q=80&w=1200&auto=format&fit=crop" alt="Joyería">
+            </div>
+            <h3>Colección Cápsula — Esmeralda</h3>
+            <p class="muted">Concepto, naming, branding y pricing premium. (Mock de e-commerce + catálogo privado.)</p>
+            <a class="more" href="#joyeria"><i class="fa-solid fa-arrow-right"></i> Ver joyería</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS / SOCIAL PROOF -->
+    <section>
+      <div class="container grid grid-3">
+        <div class="card">
+          <div class="eyebrow">Testimonio</div>
+          <p class="quote">“Alexander entiende negocio y diseño. Sus propuestas elevan el valor percibido y convierten mejor.”</p>
+          <p class="muted">— Dirección Académica, SMART</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Testimonio</div>
+          <p class="quote">“Branding y UX con enfoque premium. Gran criterio estético y orientación a resultados.”</p>
+          <p class="muted">— Colaborador, Farmé Brown</p>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Disponibilidad</div>
+          <p class="muted">Trabajo remoto, manejo de agenda flexible (actualmente en docencia y emprendimientos). Preparando viaje a Rusia en septiembre.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="container grid grid-2">
+        <div class="card">
+          <div class="eyebrow">Contacto</div>
+          <h2 class="section-title">Hablemos</h2>
+          <p class="muted">¿Buscas un perfil que combine <strong>estrategia</strong>, <strong>diseño</strong> y <strong>lujo</strong>? Escribe y cuéntame tu proyecto.</p>
+          <div class="spaced mt-3">
+            <a class="btn btn-primary" href="mailto:tuemail@ejemplo.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a class="btn btn-outline" target="_blank" href="https://wa.me/573000000000?text=Hola%20Alexander,%20me%20interesa%20tu%20perfil"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a class="btn btn-outline" target="_blank" href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a class="btn btn-outline" target="_blank" href="https://github.com/alexhardlion09"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Disponibilidad docente</div>
+          <ul class="muted">
+            <li>Lun/Mié/Jue: 7–8 am · 9–10 am</li>
+            <li>SMART: 1:20–9:00 pm</li>
+            <li>Clases extra: Lun/Mié 9:30–10:30 pm · Mar/Jue 10–11 pm</li>
+            <li>Particulares: Nicolás, Julieta, Jorge, Nidia</li>
+          </ul>
+          <p class="muted">*Horarios variables. Consultar agenda.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Alexander Bernal · Hecho con estrategia, diseño y lujo.
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
 
