@@ -1,14 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Alexander Bernal | Marketing Internacional</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1a73e8, #34a853);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #1a73e8;
+      margin-bottom: 1rem;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    a.button {
+      display: inline-block;
+      background: #1a73e8;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background: #0c47a1;
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola! Bienvenido a mi portafolio 🚀</h1>
-  <p>Esto está publicado con GitHub Pages.</p>
+
+  <header>
+    <h1>Alexander Bernal</h1>
+    <p>Marketing Internacional | Estrategia Digital | Comunicación Multilingüe</p>
+  </header>
+
+  <section>
+    <h2>Sobre mí</h2>
+    <p>
+      Soy un profesional de <strong>marketing y publicidad</strong> con enfoque en 
+      <strong>experiencias digitales</strong>, branding y posicionamiento internacional.  
+      Hablo <strong>inglés C1, francés, italiano y español nativo</strong>, lo que me permite conectar marcas 
+      con audiencias globales y crear estrategias que trascienden fronteras.
+    </p>
+  </section>
+
+  <section>
+    <h2>Habilidades Clave</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Marketing Estratégico</h3>
+        <p>Diseño campañas digitales que generan resultados medibles y construyen marca.</p>
+      </div>
+      <div class="card">
+        <h3>Experiencia de Usuario (UX)</h3>
+        <p>Transformo datos y emociones en interfaces que enamoran y fidelizan clientes.</p>
+      </div>
+      <div class="card">
+        <h3>Comunicación Multilingüe</h3>
+        <p>Traducción cultural y lingüística para que cada mensaje llegue con precisión global.</p>
+      </div>
+      <div class="card">
+        <h3>Negociación Internacional</h3>
+        <p>Capacidad de cerrar acuerdos y liderar proyectos en entornos multiculturales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proyectos Destacados</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Campaña Global de Branding</h3>
+        <p>Estrategia digital para aumentar la visibilidad de una marca emergente en 3 países.</p>
+      </div>
+      <div class="card">
+        <h3>UX en E-commerce</h3>
+        <p>Diseño de arquitectura de información y experiencia de compra intuitiva.</p>
+      </div>
+      <div class="card">
+        <h3>Expansión de Marca</h3>
+        <p>Consultoría en marketing internacional para ingresar al mercado europeo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align:center;">
+    <h2>¿Hablamos?</h2>
+    <p>Estoy listo para aportar visión estratégica y resultados en tu empresa.</p>
+    <a href="mailto:alexander.bernal@example.com" class="button">Contáctame</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Alexander Bernal | Marketing Internacional</p>
+  </footer>
+
 </body>
 </html>
-
-
